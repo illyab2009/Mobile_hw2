@@ -1,54 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.illyabalakin.hw2.MainActivity"
-    android:orientation="vertical"
-    android:layout_margin="10dp"
-    android:weightSum="1">
-
-    <EditText
-        android:id="@+id/editTextSearchQuery"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/queryHint"/>
+    android:layout_margin="5dp">
 
     <LinearLayout
+        android:id="@+id/firstLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+        android:orientation="vertical"
+        android:layout_marginBottom="5dp"
+        android:weightSum="1">
 
         <EditText
-            android:id="@+id/editTextTag"
-            android:layout_width="0dp"
+            android:id="@+id/editTextSearchQuery"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_weight="2"
-            android:hint="@string/tagHint"
-            />
+            android:hint="@string/queryHint"/>
 
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="@string/save"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <EditText
+                android:id="@+id/editTextTag"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:hint="@string/tagHint"
+                />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="@string/save"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:background="@color/taggedSearchesViewBackground"
-        />
 
     <Button
         android:id="@+id/btnClear"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
         android:text="@string/clearTags" />
 
 
-</LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/hello"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/firstLayout"
+        android:layout_above="@id/btnClear"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/taggedSearchesViewBackground"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+
+        <include layout="@layout/card_view"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

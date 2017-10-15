@@ -3,6 +3,10 @@
 
     <string name="save">Save</string>
 
+    <string name="edit">Edit</string>
+
+    <string name="delete">Delete</string>
+
     <string name="clearTags">Clear Tags</string>
 
     <string name="queryHint">Enter Twitter search query here</string>
