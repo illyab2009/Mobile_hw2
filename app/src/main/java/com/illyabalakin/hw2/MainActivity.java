@@ -161,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
 
         MyAdapter adapter = new MyAdapter(queryList, this);
         rv.setAdapter(adapter);
-
     }
 
     protected void editBtnClicked(int position) {
